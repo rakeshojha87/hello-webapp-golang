@@ -62,7 +62,7 @@ pipeline {
                    withCredentials([usernamePassword(credentialsId: 'DOCKER_REGISTRY_CREDENTIALS_ID', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                        sh """
                            echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
-                           docker push dab8106/hellogo
+                           docker push rojha87/hellogo
                        """
                    }
                }
