@@ -32,7 +32,7 @@ pipeline {
         stage('Run SonarQube Analysis') {
             steps {
                 script {
-                        sh '/usr/local/sonar/sonar/bin/sonar-scanner -X -Dsonar.organization=wm-demo -Dsonar.projectKey=wm-demo_hello-webapp-golang -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io'
+                        sh '/usr/local/sonar/sonar/bin/sonar-scanner -X -Dsonar.organization=wm-demo-rakesh -Dsonar.projectKey=wm-demo-rakesh_hello-webapp-golang -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io'
                 }
             }
         }
