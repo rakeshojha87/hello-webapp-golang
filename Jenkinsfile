@@ -14,7 +14,6 @@ pipeline {
             steps {
                 script {
                     sh 'go mod init golang-cicd'
-                    sh 'mkdir config'
                     sh 'go mod tidy'
                     sh 'go test'
                 }
