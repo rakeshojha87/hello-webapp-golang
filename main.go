@@ -3,7 +3,10 @@ package main
 
 import (
 	"fmt"
+	"golang-cicd/config"
 	"net/http"
+
+	"github.com/kataras/golog"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -11,6 +14,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	if !config.Parse("conf/conf.yaml") {
+		golog.Error("Invalid Config provided")
+		return
+	}
 	http.HandleFunc("/", handler)
-	http.ListenAndServe(":8081", nil)
+	http.ListenAndServe(config.Props.Listen, nil)
 }
