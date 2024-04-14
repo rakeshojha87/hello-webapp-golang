@@ -12,4 +12,4 @@
       ignore_errors: yes
 
     - name: Run a new container
-      command: docker run -itd -p 8081:8081 --name helloapp --rm rojha87/hellogo
+      command: docker run -itd -p 8082:8082 --name helloapp --rm rojha87/hellogo
